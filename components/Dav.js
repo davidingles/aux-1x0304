@@ -6,47 +6,71 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/10D ROANO.gltf");
+  const { nodes, materials } = useGLTF("/3D 1X0304.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom"].geometry}
-        material={materials.TQ_ARD_front}
+        geometry={nodes.Plano001.geometry}
+        material={materials["Material.001"]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom_1"].geometry}
-        material={materials.TQ_ARD_back}
+        geometry={nodes.Plano002.geometry}
+        material={materials["Material.001"]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom_2"].geometry}
-        material={materials.TQ_ARD_edge}
+        geometry={nodes.Plano003.geometry}
+        material={materials["Material.001"]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom003"].geometry}
-        material={materials["TQ_ARD_front.001"]}
+        geometry={nodes.Texto.geometry}
+        material={materials["Material.001"]}
+        position={[0.71, 0, 0.08]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom003_1"].geometry}
-        material={materials["TQ_ARD_back.002"]}
+        geometry={nodes.Texto001.geometry}
+        material={materials["Material.001"]}
+        position={[-0.01, 0, 0.71]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
       />
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes["TQ_ARD-geom003_2"].geometry}
-        material={materials["TQ_ARD_edge.002"]}
+        geometry={nodes.Texto002.geometry}
+        material={materials["Material.001"]}
+        position={[0.62, 0.17, -0.48]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1X0304_ARD-geom"].geometry}
+        material={materials["back-dil"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1X0304_ARD-geom_1"].geometry}
+        material={materials["back-dil.001"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["_1X0304_ARD-geom_2"].geometry}
+        material={materials._1X0304_ARD_edge}
       />
     </group>
   );
 }
 
-useGLTF.preload("/10D ROANO.gltf");
+useGLTF.preload("/3D 1X0304.gltf");
